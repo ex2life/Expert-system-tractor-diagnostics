@@ -17,9 +17,9 @@ html,body{
 .flip-list-enter-active, .flip-list-leave-active {
     transition: all 1s;
 }
-.flip-list-enter, .flip-list-leave-to /* .list-leave-active below version 2.1.8 */ {
+.flip-list-enter, .flip-list-leave-to {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(30px);
 }
 .modal-dialog{
     position: relative;
