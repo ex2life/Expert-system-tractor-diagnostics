@@ -7,24 +7,18 @@
     <title>Диагностика тормозной системы</title>
 </head>
 <script src="js/vue.js"></script>
-<script>
-    /**var lastScrollTop = 0;
-     window.addEventListener('scroll', function() {
-        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-        if (st > lastScrollTop){
-            window.scrollTo(0,document.body.scrollHeight);
-        } else {
-            window.scrollTo(0,0);
-        }
-        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    });**/
-</script>
 <body>
 <div class="container-fluid " id="app">
     <div class="card">
         <div class="card-header">
-            <h3>Задание №1
-            </h3>
+            <div class="row">
+                <div class="col-6">
+                    <h3>Задание №1</h3>
+                </div>
+                <div class="col-6 text-right">
+                    <a class="btn btn-warning" href="#app2">⬇ Перейти к заданию №2 ⬇</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="">
@@ -99,7 +93,7 @@
                     </div>
                 </div>
                 <div class="my-1">
-                    <div class="card text-center">
+                    <div class="card text-center" style="display: none;">
                         <div class="card-body">
                             <nav>
                                 <a class="btn btn-warning" href="#app2">⬇ Перейти к заданию №2 ⬇</a>
@@ -115,12 +109,15 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li
-                                    v-for="(malfunction, index) of filteredMalfunction"
-                                    class="list-group-item mb-1 rounded text-center"
-                            >
-                                {{ malfunction.text }}
-                            </li>
+                            <transition-group name="flip-list" tag="ul">
+                                <li
+                                        v-for="(malfunction, index) of filteredMalfunction"
+                                        class="list-group-item mb-1 rounded text-center"
+                                        v-bind:key="malfunction"
+                                >
+                                    {{ malfunction.text }}
+                                </li>
+                            </transition-group>
                         </ul>
                     </div>
                 </div>
@@ -131,14 +128,20 @@
 <div class="container-fluid" id="app2">
     <div class="card">
         <div class="card-header">
-            <h3>Задание №2
-            </h3>
+            <div class="row">
+                <div class="col-6">
+                    <h3>Задание №2</h3>
+                </div>
+                <div class="col-6 text-right">
+                    <a class="btn btn-warning" href="#app">⬆ Перейти к заданию №1 ⬆</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="">
         <div class="row">
-            <div class="col-lg-5">
-                <div class="my-1">
+            <div class="col-lg-5" >
+                <div class="my-1" style="display: none;">
                     <div class="card text-center">
                         <div class="card-body">
                             <nav>
@@ -170,12 +173,15 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li
-                                    v-for="(malfunction, index) of filteredMalfunction"
-                                    class="list-group-item mb-1 rounded text-center"
-                            >
-                                {{ malfunction.text }}
-                            </li>
+                            <transition-group name="flip-list" tag="ul">
+                                <li
+                                        v-for="(malfunction, index) of filteredMalfunction"
+                                        class="list-group-item mb-1 rounded text-center"
+                                        v-bind:key="malfunction"
+                                >
+                                    {{ malfunction.text }}
+                                </li>
+                            </transition-group>
                         </ul>
                     </div>
                 </div>
