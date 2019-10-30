@@ -39,22 +39,19 @@
                             <button
                                     type="button" class="btn btn-primary"
                                     v-on:click="sign.click=true; tek++;"
-                                    v-if="sign.iden!='end'"
-                            >
-                                Да
+                                    v-if="sign.iden!='end'"                            >
+                                Присутствует
                             </button>
                             <button
                                     type="button" class="btn btn-danger"
                                     v-on:click="tek++;"
-                                    v-if="sign.iden!='end'"
-                            >
-                                Нет
+                                    v-if="sign.iden!='end'"                            >
+                                Не наблюдается
                             </button>
                             <button
                                     type="button" class="btn btn-info"
                                     v-on:click="tek--; sign.click=false;"
-                                    v-if="sign.iden!='a'"
-                            >
+                                    v-if="sign.iden!='a'"                            >
                                 Назад
                             </button>
                         </div>
