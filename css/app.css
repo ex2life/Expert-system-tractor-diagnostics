@@ -1,0 +1,9 @@
+#app,#app2 {
+    height: 100vh;
+}
+html {
+    scroll-behavior: smooth; /* свойство scroll-behavior не наследуется, применяется к прокручиваемым блокам */
+}
+html,body{
+    overflow-y:hidden;
+}
