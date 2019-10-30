@@ -10,6 +10,17 @@ html,body{
 .flip-list-move {
     transition: transform 1s;
 }
+.flip-list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+.flip-list-enter-active, .flip-list-leave-active {
+    transition: all 1s;
+}
+.flip-list-enter, .flip-list-leave-to /* .list-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(30px);
+}
 .modal-dialog{
     position: relative;
     display: table; /* This is important */
